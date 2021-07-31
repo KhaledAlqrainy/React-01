@@ -11,13 +11,15 @@ constructor(props){
         counting : 0
     };
 
-    var increaseVote = () => {
-        this.setState ({
-            counting: this.state.counting +1
-        });
-        
-    };
+  
 }
+
+increaseVote = () => {
+    this.setState ({
+        counting: this.state.counting +1
+    });
+    
+};
     render(){
         return(
             <Card style={{ width: '20rem' }}
@@ -29,7 +31,7 @@ constructor(props){
                 <Card.Text>
                 {this.props.description}
                 </Card.Text>
-                <Button variant="primary">Favorite 😍</Button>
+                <Button variant="primary" >Favorite 😍:{this.state.counting} </Button>
             </Card.Body>
             </Card>
         )
