@@ -1,6 +1,7 @@
 
 import React from 'react';
 import HornedBeast from './HornedBeast';
+import { Col, Row } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class Main extends React.Component{
@@ -18,6 +19,8 @@ class Main extends React.Component{
 
                 {this.getting().map((item)=>{
                     return (
+                       
+                        <Row>
                         <HornedBeast 
                         title={item.title}
                         image_url={item.image_url}
@@ -25,6 +28,8 @@ class Main extends React.Component{
                         models={this.props.models}
                         showModal={this.props.stateUpdate}
                         />
+                        </Row>
+                        
                     )
                 })
                     

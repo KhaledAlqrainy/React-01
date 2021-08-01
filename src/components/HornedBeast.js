@@ -30,8 +30,8 @@ increaseVote = () => {
     render(){
         return(
         
-        <Card style={{ width: '20rem' }} onClick={this.increaseVote} >
-            
+        <Card style={{ width: '22rem' }} onClick={this.increaseVote} >
+
         <Card.Img variant="top" src={this.props.image_url} />
 
         <Card.Body>

@@ -13,7 +13,7 @@ class SelectedBeast extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         <img 
-                        style={{width:"20rem"}}
+                        style={{width:"22rem"}}
                         src={this.props.image_url}
                         alt={this.props.title}
                         />

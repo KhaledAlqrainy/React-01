@@ -5,7 +5,9 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import NewData from './components/data.json';
 import SelectedBeast from './components/SelectedBeast'
+import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 class App extends React.Component{
     constructor (props){
@@ -44,10 +46,11 @@ class App extends React.Component{
   render(){
     return(
       <>
-
+    <Container >
       <Row>
+        <Col>
         <Header />
-
+        </Col>
       </Row>
 
       <Row>
@@ -59,7 +62,7 @@ class App extends React.Component{
       </Row>
 
       <Row>
-
+      <Col>
       <SelectedBeast 
 
         show={this.state.show}
@@ -68,13 +71,16 @@ class App extends React.Component{
         image_url={this.state.image_url}
         description={this.state.description}
       />
+      </Col>
       </Row>
 
       <Row>
-
+      <Col>
       <Footer />
-
+      </Col>
       </Row>
+
+      </Container>
       </>
     )
   }
