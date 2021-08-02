@@ -1,45 +1,35 @@
 
 import React from 'react';
+import { Col } from 'react-bootstrap';
 import HornedBeast from './HornedBeast';
-import { Col, Row } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class Main extends React.Component{
 
-    getting(){
-
-    
-    let newData = JSON.parse(JSON.stringify(this.props.data))
-    return newData;
+class Main extends React.Component {
+  
+    getData() {
+        let dataArr = JSON.parse(JSON.stringify(this.props.data));
+        return dataArr;
     }
-
-    render(){
-        return(
-            <div>
-
-                {this.getting().map((item)=>{
+    render() {
+        return (
+            <>
+                {this.getData().map((n) => {
                     return (
-                       
-                        <Row>
-                        <HornedBeast 
-                        title={item.title}
-                        image_url={item.image_url}
-                        description={item.description}
-                        models={this.props.models}
-                        showModal={this.props.stateUpdate}
-                        />
-                        </Row>
-                        
-                    )
-                })
-                    
-                    
-                
-               }
-            </div>
-
-        )
+                        <Col lg={4}>
+                            <HornedBeast
+                                title={n.title}
+                                image_url={n.image_url}
+                                description={n.description}
+                                modalSelected={this.props.modalSelected}
+                                showModal={this.props.stateUpdate}
+                            />
+                        </Col>
+                    );
+                })}
+            </>
+        );
     }
-}
 
+}
 export default Main;
